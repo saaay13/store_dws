@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('seller_id')->constrained('sellers');
             $table->foreignId('client_id')->constrained('clients');
-            $table->date_time_set('fecha');
+            $table->date('fecha');
             $table->decimal('total');
             $table->timestamps();
         });

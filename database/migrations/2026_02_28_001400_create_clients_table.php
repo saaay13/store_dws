@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('codigo_cliente')->unique();
-            $table->interger('puntos')->default(0);
+            $table->integer('puntos')->default(0);
             $table->timestamps();
         });
     }
