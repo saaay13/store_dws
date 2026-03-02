@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('image_url');
-            $table->enum('status', ['activo', 'inactivo','eliminado'])->default('activo');
+            $table->enum('state', ['activo', 'inactivo', 'eliminado'])->default('activo');
 
-            
+
             $table->timestamps();
         });
     }

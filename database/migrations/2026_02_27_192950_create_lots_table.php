@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('proveedor');
             $table->decimal('precio_compra');
             $table->decimal('precio_venta');
-            $table->string('stock_disponible');
-            $table->string('fecha_ingreso');
-            $table->string('fecha_compra');
+            $table->integer('stock_disponible');
+            $table->date('fecha_ingreso');
+            $table->date('fecha_compra');
             $table->string('codigo_lote');
-            $table->enum('status', ['activo', 'inactivo','eliminado'])->default('activo');
+            $table->enum('state', ['activo', 'inactivo', 'eliminado'])->default('activo');
             $table->timestamps();
         });
     }

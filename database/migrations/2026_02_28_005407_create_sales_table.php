@@ -17,6 +17,11 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained('clients');
             $table->date('fecha');
             $table->decimal('total');
+            $table->string('Direccion_entrega');
+            $table->string('metodo_pago');
+            $table->enum('state_sale', ['pendiente', 'enviado', 'entregado', 'cancelado'])->default('pendiente');
+            $table->enum('state_payment', ['pendiente', 'pagado', 'cancelado'])->default('pendiente');
+            $table->enum('state', ['activo', 'inactivo', 'eliminado'])->default('activo');
             $table->timestamps();
         });
     }

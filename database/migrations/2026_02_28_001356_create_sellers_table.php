@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo_vendedor')->unique();
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

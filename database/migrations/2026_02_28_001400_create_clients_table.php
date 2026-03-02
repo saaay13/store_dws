@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo_cliente')->unique();
+            $table->foreignId('user_id')->constrained('users');
             $table->integer('puntos')->default(0);
             $table->timestamps();
         });
