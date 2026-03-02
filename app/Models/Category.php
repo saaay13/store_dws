@@ -12,4 +12,9 @@ class Category extends Model
         'image_url',
         'state',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

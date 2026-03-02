@@ -27,9 +27,23 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'apellidos',
+        'ci',
+        'telefono',
+        'rol',
         'email',
         'password',
     ];
+
+    public function seller()
+    {
+        return $this->hasOne(Seller::class);
+    }
+
+    public function client()
+    {
+        return $this->hasOne(Client::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
