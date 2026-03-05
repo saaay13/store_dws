@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 // RUTAS PUBLICAS
 Route::get('products', [ProductController::class, 'index']);
 Route::get('categories', [CategoryController::class, 'index']);
+Route::post('users', [UserController::class, 'store']);
 
 // RUTAS PROTEGIDAS
 Route::middleware('auth:sanctum')->group(function () {
@@ -24,10 +25,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('sales', SaleController::class);
     Route::apiResource('detalle-ventas', DetalleVentaController::class);
     Route::apiResource('clients', ClientController::class);
-    Route::apiResource('users', UserController::class);
+    Route::apiResource('users', UserController::class)->except(['store']);
     Route::apiResource('sellers', SellerController::class);
     Route::apiResource('lots', LotController::class);
 
-    Route::apiResource('products', ProductController::class); //->except(['index']);
-    Route::apiResource('categories', CategoryController::class); //->except(['index']);
+    Route::apiResource('products', ProductController::class)->except(['index']);
+    Route::apiResource('categories', CategoryController::class)->except(['index']);
 });
